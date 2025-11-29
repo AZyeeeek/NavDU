@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email with SMTP.js</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/ABeeZee.css">
+    <link rel="stylesheet" href="../static/css/Abyssinica%20SIL.css">
+    <link rel="stylesheet" href="../static/css/Alegreya%20SC.css">
+    <link rel="stylesheet" href="../static/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/aboutus.css">
+    <link rel="stylesheet" href="../static/css/Bold-BS4-Footer-Simple.css">
+    <link rel="stylesheet" href="../static/css/Contact-Form-v2-Modal--Full-with-Google-Map.css">
+    <link rel="stylesheet" href="../static/css/Features-Cards-icons.css">
+    <link rel="stylesheet" href="../static/css/Navbar---Apple-navbar---apple-1.css">
+    <link rel="stylesheet" href="../static/css/Navbar---Apple-navbar---apple.css">
+    <link rel="stylesheet" href="../static/css/Navbar---Apple.css">
+    <link rel="stylesheet" href="../static/css/Navigation-Menu.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/tahririyat.css">
+    <link rel="stylesheet" href="../static/css/talab.css">
+</head>
+<body>
+    <header id="tepajonim" style="margin-top: 0px;padding-top: 8px;">
+        <div class="visible" id="top" style="margin-left: -11px;" data-bs-target="#site-navigation" data-bs-smooth-scroll="true"><a href="/" style="padding-top: 0px;">&nbsp;<img src="../static/img/voiy%20pde.jpg" width="310" height="98" style="padding-top: 0px;margin-top: 1px;padding-left: 2px;margin-left: 224px;"></a></div>
+        <div class="menuback">
+            <div class="menunofull">
+                <nav id="site-navigation" class="primary-navigation" aria-label="Primary menu" style="padding-top: 10px;margin-left: 6px;">
+                    <div class="primary-menu-container">
+                        <ul id="primary-menu-list" class="menu-wrapper">
+                            <li id="menu-item-1733" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1733"><a href="/about" data-ps2id-api="true" style="font-size: 16pz;"><span style="color: var(--primary-nav--color-link-hover);">BIZ HAQIMIZDA</span></a></li>
+                            <li id="menu-item-1301" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1301"><a href="/tahririyat" data-ps2id-api="true" style="font-size: 16pz;"><span style="color: var(--primary-nav--color-link-hover);">TAHRIRIYAT JAMOASI</span></a></li>
+                            <li id="menu-item-1764" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1764"><a href="/talablar" data-ps2id-api="true" style="font-size: 16pz;"><span style="color: var(--primary-nav--color-link-hover);">NASHR QILISH SHARTLARI</span></a></li>
+                            <li id="menu-item-1298" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1298"><a href="/arxiv" data-ps2id-api="true" style="font-size: 16pz;">ARXIV</a></li>
+                            <li id="menu-item-1262" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1262"><a href="/muallif" data-ps2id-api="true" style="font-size: 16pz;text-decoration: underline;"><span style="color: var(--primary-nav--color-link-hover); background-color: transparent;">MUALLIF PROFILI</span><br><br></a></li>
+                            <li id="menu-item-1737" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1737"></li>
+                            <li id="menu-item-1251" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1251"></li>
+                            <li id="menu-item-1806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1806"></li>
+                            <li id="menu-item-1289" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1289"></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="submenu">
+            <div class="subnofull">
+                <div class="issn"><span>Onlayn ISSN 2520-2480 Chop etish ISSN 2520-6990</span></div>
+            </div>
+        </div>
+    </header>
+    <div id="okansila"></div>
+    <p class="text-center text-sm-start text-md-start text-lg-start text-xl-center text-xxl-center" id="ogoh" style="margin-left: 5px;font-size: 16px;font-family: ABeeZee, sans-serif;color: var(--bs-body-color);text-align: right;margin-bottom: 22px;margin-top: 28px;"><span style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Agar bizdan xabarlar bo'lmasa, "spam" jildini tekshiring, agar unga xabar tushgan bo'lsa, "spam emas" tugmasini bosib qo'ying.</span><br>Biz qisqa vaqt ichida siz bilan bog'lanamiz.Agar biz siz bilan bog'lanmasak&nbsp;journal_nspi@mail.ru manziliga yozing<br><br></p>
+    <div class="text-center" id="formv2">
+        <div class="container-fluid text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center cont">
+            <h1>Material yuborish blankasi</h1>
+            <hr>
+            <form id="contactForm-1" method="post" action="/email_handler/" enctype="multipart/form-data" style="margin-left: 0px;">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="successfail-1"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6" id="message-1">
+                        <h2 class="h4"><i class="fa fa-envelope"></i>&nbsp;<small><small class="required-input">&nbsp;(*majburiy)</small></small></h2>
+                        <div class="form-group mb-3"><label class="form-label" for="from-name">FIO</label><span class="required-input">*</span>
+                            <div class="input-group"><span class="input-group-text"><i class="fa fa-user-o"></i></span><input class="form-control" type="text" id="from-name-1" name="name" required="" placeholder="Familya ism sharif" minlength="10"></div>
+                        </div>
+                        <div class="form-group mb-3"><label class="form-label" for="from-email">E-pochta</label><span class="required-input">*</span>
+                            <div class="input-group"><span class="input-group-text"><i class="fa fa-envelope-o"></i></span><input class="form-control" type="email" id="from-email-1" name="email" required="" placeholder="Elektron pochta"></div>
+                        </div>
+                        <div class="form-group mb-3"><label class="form-label" for="subject">Mavzu</label><span class="required-input">*</span>
+                            <div class="input-group"><span class="input-group-text"><i class="fa fa-pencil"></i></span><input class="form-control" type="text" id="subject-1" name="subject" required="" placeholder="Mavzu"></div>
+                        </div>
+                        <div class="form-group mb-3"><label class="form-label" for="message">Telefon raqami</label><span class="required-input">*</span>
+                            <div class="input-group"><span class="input-group-text"><i class="fa fa-comment"></i></span><textarea class="form-control" id="message-1" name="tel" required="" placeholder="Telefon raqam"></textarea></div>
+                        </div>
+                        <div class="form-group mb-3"><label class="form-label" for="attachment">Maqola</label>
+                            <div class="input-group"><span class="input-group-text"><i class="fa fa-paperclip"></i></span><input class="form-control" type="file" id="attachment-1" name="file"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group d-flex justify-content-center"><button class="btn btn-primary" type="submit">Yuborish</button></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+    </script>
+</body>
+</html>
