@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-3q3%xh#4$_r944z!2%4q)@#i(xq^#8&!d9x3$*g7a1cjaa&0$7
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "https://navduaxborotnoma.onrender.com",
+    "navduaxborotnoma.onrender.com",
     "navduaxborotnoma.uz",
     "www.navduaxborotnoma.uz",
 ]
@@ -143,4 +143,5 @@ EMAIL_USE_SSL = False
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'azizbekbakhromov12@gmail.com'
 EMAIL_HOST_PASSWORD = 'gzsevjugffhimsxu'
+
 
