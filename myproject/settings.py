@@ -27,7 +27,12 @@ SECRET_KEY = 'django-insecure-3q3%xh#4$_r944z!2%4q)@#i(xq^#8&!d9x3$*g7a1cjaa&0$7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    "https://navduaxborotnoma.onrender.com",
+    "navduaxborotnoma.uz",
+    "www.navduaxborotnoma.uz",
+]
+
 
 
 # Application definition
@@ -83,7 +88,10 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://navduaxborotnoma.uz",
+    "https://www.navduaxborotnoma.uz",
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -135,3 +143,4 @@ EMAIL_USE_SSL = False
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'azizbekbakhromov12@gmail.com'
 EMAIL_HOST_PASSWORD = 'gzsevjugffhimsxu'
+
